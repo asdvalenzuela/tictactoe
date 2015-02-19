@@ -42,7 +42,7 @@ function Game(turns, board) {
             }
             else if (this.board.isWinner() === 'computer') {
                 this.board.preventBoardChanges();
-                $( "#dialog" ).html('<p>Sorry, you lost. Click \'New Game\' to play again.</p>').dialog();
+                $( "#dialog" ).html('<p>Sorry, you lost.</p>').dialog();
             }
         }
         if (this.turns === 9) {
