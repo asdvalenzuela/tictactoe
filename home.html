@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tic Tac Toe</title>
+    <link href="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.10/themes/ui-lightness/jquery-ui.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="./static/css/style.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.10/jquery-ui.min.js"></script>
+    <script src="./static/js/Board.js"></script>
+    <script src="./static/js/Game.js"></script>
+    <script src="./static/js/MinimaxGame.js"></script>
+    <script src="./static/js/tictactoe.js"></script>
+</head>
+<body>
+    <h1>Tic Tac Toe</h1>
+    <p>Click a space on the board to start playing.
+    <div id="board-container" class="center">
+        <table id="board">
+            <tr class="row">
+                <td id="a1"></td>
+                <td id="a2"></td>
+                <td id="a3"></td>
+            </tr>
+            <tr class="row">
+                <td id="b1"></td>
+                <td id="b2"></td>
+                <td id="b3"></td>
+            </tr>
+            <tr class="row">
+                <td id="c1"></td>
+                <td id="c2"></td>
+                <td id="c3"></td>
+            </tr>
+        </table>
+    </div>
+    <div class="center button">
+        <button id="new-game" class="center">New Game</button>
+    </div>
+    <div id="dialog" title="Game Over">
+    </div>
+</body>
+</html>

@@ -1,0 +1,49 @@
+.center {
+    margin-right: auto;
+    margin-left: auto;
+}
+h1, p {
+    text-align: center;
+    font-family: sans-serif;
+}
+.button {
+    margin-left:auto;
+    margin-right:auto;
+    text-align: center;
+}
+#new-game {
+    margin: 1%;
+    font-size: 12pt;
+    color: #666666;
+    background-color: #dedede;
+    padding: 5px 15px 5px 15px;
+}
+#board-container {
+    height: 350px;
+    width: 350px;
+    background-color:none;
+    overflow: hidden;
+}
+#board {
+    width: 354px;
+    height: 354px;
+    background-color:none;
+    border-spacing:0;
+    margin-left: -2px;
+    margin-top: -2px;
+}
+td {
+    height: 116px;
+    width: 116px;
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 40pt;
+    border-collapse: collapse;
+    border: 2px solid #B9E9F0;
+    text-transform: uppercase;
+    color: #999999;
+}
+.ui-dialog.ui-widget.ui-widget-content.ui-corner-all.ui-draggable.ui-resizable {
+    margin-top:15%;
+    margin-left:40%;
+}
