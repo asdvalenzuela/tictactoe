@@ -8,16 +8,16 @@ Simple testing achieved with Jasmine.
 Play the Game
 -------------
 
--The game is [deployed on heroku.!](https://tictactoeunbeatable.herokuapp.com/)
+- The game is [deployed on heroku.](https://tictactoeunbeatable.herokuapp.com/)
 
--Alternatively, clone this repo and open home.html in browser.
+- Alternatively, clone this repo and open home.html in browser.
 
 
 Tech Stack
 ----------
 
--Javascript
--jQuery
--jQuery UI
--HTML
--CSS
+- Javascript
+- jQuery
+- jQueryUI
+- HTML
+- CSS
