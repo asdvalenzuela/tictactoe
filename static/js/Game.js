@@ -10,6 +10,7 @@ function Game(turns, board) {
         }
     };
     this.makeMove = function(spaceId) {
+        //remove the space from blankSpaces
         var index = this.board.blankSpaces.indexOf(spaceId);
         this.board.blankSpaces.splice(index, 1);
         if (this.activePlayer() == 'computer') {
@@ -22,6 +23,7 @@ function Game(turns, board) {
     };
     this.computerPlays = function() {
         miniGame = new MinimaxGame(this);
+        //choose the best possible move
         result = miniGame.determine();
         this.makeMove(result);
         var spaceId = '#' + result;
@@ -39,6 +41,7 @@ function Game(turns, board) {
     this.checkGameOver = function() {
         if (this.turns >= 5) {
             if (this.board.isWinner() === 'human') {
+                //prevents player from changing the board post-win
                 this.board.preventBoardChanges();
                 $( "#dialog" ).html('<p>Congratulations! You won!</p>').dialog();
             }

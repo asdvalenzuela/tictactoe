@@ -1,8 +1,8 @@
 describe("endGame", function() {
     game = new Game();
-    for (var i = 0; i < game.board.letters.length; i++) {
-        for (var j = 0; j < game.board.numbers.length; j++) {
-            spaceId = '#' + game.board.letters[i] + game.board.numbers[j];
+    for (var i = 0; i < game.board.rows_.length; i++) {
+        for (var j = 0; j < game.board.columns.length; j++) {
+            spaceId = '#' + game.board.rows_[i] + game.board.columns[j];
             $(spaceId).html('x');
         }
     }
