@@ -69,18 +69,18 @@ function MinimaxGame(game) {
             var move = this.gameBoard.blankSpaces[i];
 
             //create identical game and board instances to manipulate
-            var miniblankSpaces = this.gameBoard.blankSpaces.slice();
-            var minixSpaces = this.gameBoard.xSpaces.slice();
-            var minioSpaces = this.gameBoard.oSpaces.slice();
-            var minimaxBoard = new Board(miniblankSpaces, minixSpaces, minioSpaces);
+            var blankSpaces = this.gameBoard.blankSpaces.slice();
+            var xSpaces = this.gameBoard.xSpaces.slice();
+            var oSpaces = this.gameBoard.oSpaces.slice();
+            var minimaxBoard = new Board(blankSpaces, xSpaces, oSpaces);
             var minimaxGame = new Game(this.gameState.turns, minimaxBoard);
 
             minimaxGame.makeMove(minimaxGame.board.blankSpaces[i]);
             var val = this.minimax(minimaxGame, -2, 2);
             //delete references to created objects for memory efficiency
-            delete miniblankSpaces;
-            delete minixSpaces;
-            delete minioSpaces;
+            delete blankSpaces;
+            delete xSpaces;
+            delete oSpaces;
             delete minimaxGame;
             delete minimaxBoard;
             //create a list of the best possible moves, and choose a move from the list

@@ -22,9 +22,9 @@ function Game(turns, board) {
         this.turns += 1;
     };
     this.computerPlays = function() {
-        var miniGame = new MinimaxGame(this);
+        var minimaxGame = new MinimaxGame(this);
         //choose the best possible move
-        var result = miniGame.determine();
+        var result = minimaxGame.determine();
         this.makeMove(result);
         var spaceId = '#' + result;
         $(spaceId).html('o').css('pointer-events', 'none');
