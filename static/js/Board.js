@@ -2,16 +2,15 @@ function Board(blankSpaces,xSpaces,oSpaces) {
     this.blankSpaces = blankSpaces || ['a1','a2','a3','b1','b2','b3','c1','c2','c3'];
     this.xSpaces = xSpaces || [];
     this.oSpaces = oSpaces || [];
+    this.letters = ['a', 'b', 'c'];
+    this.numbers = ['1', '2', '3'];
     this.clearBoard = function() {
-        $('#a1').html('').css('pointer-events', 'auto');
-        $('#a2').html('').css('pointer-events', 'auto');
-        $('#a3').html('').css('pointer-events', 'auto');
-        $('#b1').html('').css('pointer-events', 'auto');
-        $('#b2').html('').css('pointer-events', 'auto');
-        $('#b3').html('').css('pointer-events', 'auto');
-        $('#c1').html('').css('pointer-events', 'auto');
-        $('#c2').html('').css('pointer-events', 'auto');
-        $('#c3').html('').css('pointer-events', 'auto');
+        for (var i = 0; i < this.letters.length; i++) {
+            for (var j = 0; j < this.numbers.length; j++) {
+                spaceId = '#' + this.letters[i] + this.numbers[j];
+                $(spaceId).html('').css('pointer-events', 'auto');
+            }
+        }
     };
     this.isWinner = function() {
         if (this.xSpaces.indexOf('a1') !== -1 && this.xSpaces.indexOf('a2') !== -1 && this.xSpaces.indexOf('a3') !== -1 ||
@@ -39,15 +38,12 @@ function Board(blankSpaces,xSpaces,oSpaces) {
         }
     };
     this.preventBoardChanges = function() {
-        $('#a1').css('pointer-events', 'none');
-        $('#a2').css('pointer-events', 'none');
-        $('#a3').css('pointer-events', 'none');
-        $('#b1').css('pointer-events', 'none');
-        $('#b2').css('pointer-events', 'none');
-        $('#b3').css('pointer-events', 'none');
-        $('#c1').css('pointer-events', 'none');
-        $('#c2').css('pointer-events', 'none');
-        $('#c3').css('pointer-events', 'none');
+        for (var i = 0; i < this.letters.length; i++) {
+            for (var j = 0; j < this.numbers.length; j++) {
+                spaceId = '#' + this.letters[i] + this.numbers[j];
+                $(spaceId).css('pointer-events', 'none');
+            }
+        }
     };
 }
     

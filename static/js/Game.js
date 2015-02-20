@@ -29,9 +29,11 @@ function Game(turns, board) {
         this.checkGameOver();
     };
     this.endGame = function() {
-        this.turns = 0;
         this.board.clearBoard();
         delete this.board;
+    };
+    this.newGame = function() {
+        this.turns = 0;
         this.board = new Board();
     };
     this.checkGameOver = function() {
