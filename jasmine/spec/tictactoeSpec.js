@@ -1,4 +1,4 @@
-describe("endGame", function() {
+describe('endGame', function() {
     game = new Game();
     for (var i = 0; i < game.board.rows_.length; i++) {
         for (var j = 0; j < game.board.columns.length; j++) {
@@ -15,12 +15,12 @@ describe("endGame", function() {
     else {
         result = false;
     }
-    it("should clear board", function() {
+    it('should clear board', function() {
         expect(result).toBe(true);
     });
 });
 
-describe("endGame", function() {
+describe('endGame', function() {
     game = new Game();
     game.endGame();
     if (game.board === undefined) {
@@ -29,12 +29,12 @@ describe("endGame", function() {
     else {
         result = false;
     }
-    it("should delete board", function() {
+    it('should delete board', function() {
         expect(result).toBe(true);
     });
 });
 
-describe("newGame", function() {
+describe('newGame', function() {
     game = new Game();
     game.endGame();
     game.newGame();
@@ -44,12 +44,12 @@ describe("newGame", function() {
     else {
         result = false;
     }
-    it("should reset turns", function() {
+    it('should reset turns', function() {
         expect(result).toBe(true);
     });
 });
 
-describe("newGame", function() {
+describe('newGame', function() {
     game = new Game();
     game.endGame();
     game.newGame();
@@ -61,12 +61,12 @@ describe("newGame", function() {
     else {
         result = false;
     }
-    it("should create new board", function() {
+    it('should create new board', function() {
         expect(result).toBe(true);
     });
 });
 
-describe("makeMove", function() {
+describe('makeMove', function() {
     game = new Game();
     game.makeMove('#a1');
     if (game.board.blankSpaces.indexOf('#a1') === -1) {
@@ -75,12 +75,12 @@ describe("makeMove", function() {
     else {
         result = false;
     }
-    it("should remove spaceId from blankSpaces", function() {
+    it('should remove spaceId from blankSpaces', function() {
         expect(result).toBe(true);
     });
 });
 
-describe("makeMove", function() {
+describe('makeMove', function() {
     game = new Game();
     game.makeMove('#a1');
     if (game.board.xSpaces.indexOf('#a1') !== 0 ||
@@ -90,12 +90,12 @@ describe("makeMove", function() {
     else {
         result = true;
     }
-    it("should add spaceId to xSpaces", function() {
+    it('should add spaceId to xSpaces', function() {
         expect(result).toBe(true);
     });
 });
 
-describe("makeMove", function() {
+describe('makeMove', function() {
     game = new Game();
     game.makeMove('#a1');
     if (game.turns !== 1) {
@@ -104,12 +104,12 @@ describe("makeMove", function() {
     else {
         result = true;
     }
-    it("should increment turns", function() {
+    it('should increment turns', function() {
         expect(result).toBe(true);
     });
 });
 
-describe("computerPlays", function() {
+describe('computerPlays', function() {
     game = new Game();
     game.makeMove('#a1');
     game.computerPlays();
@@ -119,12 +119,12 @@ describe("computerPlays", function() {
     else {
         result = false;
     }
-    it("should place 'o'", function() {
+    it('should place \'o\'', function() {
         expect(result).toBe(true);
     });
 });
 
-describe("isWinner", function() {
+describe('isWinner', function() {
     game = new Game();
     game.makeMove('a1');
     game.computerPlays();
@@ -138,12 +138,12 @@ describe("isWinner", function() {
     else {
         result = false;
     }
-    it("should recognize diagonal win", function() {
+    it('should recognize diagonal win', function() {
         expect(result).toBe(true);
     });
 });
 
-describe("isWinner", function() {
+describe('isWinner', function() {
     game = new Game();
     game.makeMove('b2');
     game.computerPlays();
@@ -157,12 +157,12 @@ describe("isWinner", function() {
     else {
         result = false;
     }
-    it("should recognize row win", function() {
+    it('should recognize row win', function() {
         expect(result).toBe(true);
     });
 });
 
-describe("isWinner", function() {
+describe('isWinner', function() {
     game = new Game();
     game.makeMove('a2');
     game.computerPlays();
@@ -178,7 +178,7 @@ describe("isWinner", function() {
     else {
         result = false;
     }
-    it("should recognize column win", function() {
+    it('should recognize column win', function() {
         expect(result).toBe(true);
     });
 });

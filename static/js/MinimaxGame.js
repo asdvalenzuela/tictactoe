@@ -19,14 +19,13 @@ function MinimaxGame(game) {
             return 0;
         }
         for (var i = 0; i < minimaxGame.board.blankSpaces.length; i++) {
-            var move = minimaxGame.board.blankSpaces[i];
 
             //create identical game and board instances to manipulate
             var blankSpaces = minimaxGame.board.blankSpaces.slice();
             var xSpaces = minimaxGame.board.xSpaces.slice();
             var oSpaces = minimaxGame.board.oSpaces.slice();
-            possibleBoard = new Board(blankSpaces, xSpaces, oSpaces);
-            possibleGame = new Game(minimaxGame.turns, possibleBoard);
+            var possibleBoard = new Board(blankSpaces, xSpaces, oSpaces);
+            var possibleGame = new Game(minimaxGame.turns, possibleBoard);
 
             possibleGame.makeMove(possibleGame.board.blankSpaces[i]);
             var val = this.minimax(possibleGame, alpha, beta);

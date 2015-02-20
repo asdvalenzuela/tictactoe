@@ -2,7 +2,7 @@ $( document ).ready(function() {
 
     var game = new Game();
 
-    $('td').on('click', function(e) {
+    $('td').on('click', function() {
         //pointer-events are changed to none so player cannot override previous moves
         $(this).html('x').css('pointer-events', 'none');
         game.makeMove(this.id);

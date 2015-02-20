@@ -7,7 +7,7 @@ function Board(blankSpaces,xSpaces,oSpaces) {
     this.clearBoard = function() {
         for (var i = 0; i < this.rows_.length; i++) {
             for (var j = 0; j < this.columns.length; j++) {
-                spaceId = '#' + this.rows_[i] + this.columns[j];
+                var spaceId = '#' + this.rows_[i] + this.columns[j];
                 $(spaceId).html('').css('pointer-events', 'auto');
             }
         }
@@ -40,7 +40,7 @@ function Board(blankSpaces,xSpaces,oSpaces) {
     this.preventBoardChanges = function() {
         for (var i = 0; i < this.rows_.length; i++) {
             for (var j = 0; j < this.columns.length; j++) {
-                spaceId = '#' + this.rows_[i] + this.columns[j];
+                var spaceId = '#' + this.rows_[i] + this.columns[j];
                 $(spaceId).css('pointer-events', 'none');
             }
         }
