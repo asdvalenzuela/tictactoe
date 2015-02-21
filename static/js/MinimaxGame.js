@@ -9,10 +9,10 @@ function MinimaxGame(game) {
 
     this.minimax = function(minimaxGame, alpha, beta) {
         //if the game is over, we return a score based on the result
-        if (minimaxGame.board.isWinner() === 'human') {
+        if (minimaxGame.isWinner(minimaxGame.board.xSpaces) === true) {
             return -1;
         }
-        else if (minimaxGame.board.isWinner() === 'computer') {
+        else if (minimaxGame.isWinner(minimaxGame.board.oSpaces) === true) {
             return 1;
         }
         else if (minimaxGame.board.blankSpaces.length === 0) {
@@ -30,12 +30,6 @@ function MinimaxGame(game) {
             possibleGame.makeMove(possibleGame.board.blankSpaces[i]);
             var val = this.minimax(possibleGame, alpha, beta);
 
-            //delete references to created objects for memory efficiency
-            delete blankSpaces;
-            delete xSpaces;
-            delete oSpaces;
-            delete possibleGame;
-            delete possibleBoard;
             //if the active player is the computer, the highest possible score is chosen
             if (minimaxGame.activePlayer() === 'computer') {
                 if (val > alpha) {
@@ -77,12 +71,7 @@ function MinimaxGame(game) {
 
             minimaxGame.makeMove(minimaxGame.board.blankSpaces[i]);
             var val = this.minimax(minimaxGame, -2, 2);
-            //delete references to created objects for memory efficiency
-            delete blankSpaces;
-            delete xSpaces;
-            delete oSpaces;
-            delete minimaxGame;
-            delete minimaxBoard;
+
             //create a list of the best possible moves, and choose a move from the list
             if (val > a) {
                 a = val;

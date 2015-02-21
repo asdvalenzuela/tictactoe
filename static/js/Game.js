@@ -38,14 +38,29 @@ function Game(turns, board) {
         this.turns = 0;
         this.board = new Board();
     };
+    this.isWinner = function(lst) {
+        if (lst.indexOf('a1') !== -1 && lst.indexOf('a2') !== -1 && lst.indexOf('a3') !== -1 ||
+            lst.indexOf('b1') !== -1 && lst.indexOf('b2') !== -1 && lst.indexOf('b3') !== -1 ||
+            lst.indexOf('c1') !== -1 && lst.indexOf('c2') !== -1 && lst.indexOf('c3') !== -1 ||
+            lst.indexOf('a1') !== -1 && lst.indexOf('b1') !== -1 && lst.indexOf('c1') !== -1 ||
+            lst.indexOf('a2') !== -1 && lst.indexOf('b2') !== -1 && lst.indexOf('c2') !== -1 ||
+            lst.indexOf('a3') !== -1 && lst.indexOf('b3') !== -1 && lst.indexOf('c3') !== -1 ||
+            lst.indexOf('a1') !== -1 && lst.indexOf('b2') !== -1 && lst.indexOf('c3') !== -1 ||
+            lst.indexOf('a3') !== -1 && lst.indexOf('b2') !== -1 && lst.indexOf('c1') !== -1) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    };
     this.checkGameOver = function() {
         if (this.turns >= 5) {
-            if (this.board.isWinner() === 'human') {
+            if (this.isWinner(this.board.xSpaces) === true) {
                 //prevents player from changing the board post-win
                 this.board.preventBoardChanges();
                 $( "#dialog" ).html('<p>Congratulations! You won!</p>').dialog();
             }
-            else if (this.board.isWinner() === 'computer') {
+            else if (this.isWinner(this.board.oSpaces) === true) {
                 this.board.preventBoardChanges();
                 $( "#dialog" ).html('<p>Sorry, you lost.</p>').dialog();
             }

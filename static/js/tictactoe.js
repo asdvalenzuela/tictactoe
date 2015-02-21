@@ -9,7 +9,7 @@ $( document ).ready(function() {
         //alert if the game is over
         game.checkGameOver();
         //if the game is not over, the computer plays
-        if (game.board.isWinner() === false && game.board.blankSpaces.length !== 0) {
+        if (game.isWinner(game.board.xSpaces) === false && game.board.blankSpaces.length !== 0) {
             game.computerPlays();
         }
     });
