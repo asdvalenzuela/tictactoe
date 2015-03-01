@@ -30,28 +30,32 @@ function MinimaxGame(game) {
             possibleGame.makeMove(possibleGame.board.blankSpaces[i]);
             var val = this.minimax(possibleGame, alpha, beta);
 
-            //if the active player is the computer, the highest possible score is chosen
+            //maximizing - update alpha with the best possible score so far if the player is the computer
             if (minimaxGame.activePlayer() === 'computer') {
                 if (val > alpha) {
                     alpha = val;
                 }
+                //case for pruning
                 if (alpha >= beta) {
                     return beta;
                 }
             }
-            //if the active player is the human, the lowest possible score is chosen
+            //minimizing - update beta with the worst possible score so far if the player is the human 
             else {
                 if (val < beta) {
                     beta = val;
                 }
+                //case for pruning
                 if (beta <= alpha) {
                     return alpha;
                 }
             }
         }
+        //if the active player is the computer, the highest possible score is chosen
         if (minimaxGame.activePlayer() === 'computer') {
             return alpha;
         }
+        //if the active player is the human, the lowest possible score is chosen
         else {
             return beta;
         }
